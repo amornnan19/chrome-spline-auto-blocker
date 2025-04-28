@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Spline Auto Blocker",
+  "version": "1.1",
+  "description": "Automatically blocks Spline 3D embeds on websites.",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": ["*://unpkg.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
